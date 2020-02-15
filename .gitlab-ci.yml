@@ -1,0 +1,10 @@
+build:webapi:
+  image: mcr.microsoft.com/dotnet/core/sdk:3.1
+  script:
+    - pwd
+    - cd dotnetbackend
+    - pwd
+    - dotnet --version
+    - dotnet --info
+    - dotnet build --verbosity detailed
+
