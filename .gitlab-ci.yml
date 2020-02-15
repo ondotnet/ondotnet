@@ -8,3 +8,26 @@ build:webapi:
     - dotnet --info
     - dotnet build --verbosity detailed
 
+pages:
+  image: node
+  before_script:
+    - pwd
+  script:
+    - cd angularfrontend
+    - npm --version
+    - date
+    - yarn install
+    - date
+    - yarn run ng build --aot=true --prod --build-optimizer --verbose --progress=true --delete-output-path --extract-licenses --subresource-integrity --stats-json --output-path=public
+    - date
+    - du -sh public/
+    - mv public ../public
+    - ls -a
+    - pwd
+    - cd ..
+    - ls -a
+    - pwd
+  artifacts:
+    paths:
+      - public
+
