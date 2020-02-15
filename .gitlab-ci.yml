@@ -31,3 +31,19 @@ pages:
     paths:
       - public
 
+test:angularfrontend
+  image: debian:stable
+  before_script:
+    - pwd
+  script:
+    - curl -sL https://deb.nodesource.com/setup_13.x | bash -
+    - apt-get update
+    - apt-get install -y nodejs
+    - cd angularfrontend
+    - npm --version
+    - date
+    - yarn install
+    - date
+    - time yarn run ng build --aot=true --prod --build-optimizer --verbose --progress=true --delete-output-path --extract-licenses --subresource-integrity --stats-json --output-path=public --base-href="/ondotnet/"
+    - time yarn run ng test --no-watch --code-coverage
+
