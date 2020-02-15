@@ -38,7 +38,7 @@ test:angularfrontend:
   script:
     - apt-get update
     - apt-get upgrade -yqq
-    - apt-get install build-essential curl firefox -yqq
+    - apt-get install build-essential curl firefox-esr -yqq
     - curl -sL https://deb.nodesource.com/setup_13.x | bash -
     - apt-get update
     - apt-get install -y nodejs
