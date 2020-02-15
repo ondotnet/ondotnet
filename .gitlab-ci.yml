@@ -31,7 +31,7 @@ pages:
     paths:
       - public
 
-test:angularfrontend
+test:angularfrontend:
   image: debian:stable
   before_script:
     - pwd
