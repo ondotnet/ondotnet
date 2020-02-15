@@ -38,7 +38,7 @@ test:angularfrontend:
   script:
     - apt-get update
     - apt-get upgrade -yqq
-    - apt-get install build-essential curl -yqq
+    - apt-get install build-essential curl firefox -yqq
     - curl -sL https://deb.nodesource.com/setup_13.x | bash -
     - apt-get update
     - apt-get install -y nodejs
@@ -48,6 +48,7 @@ test:angularfrontend:
     - date
     - yarn install
     - date
+    - firefox --version
     - time yarn run ng build --aot=true --prod --build-optimizer --verbose --progress=true --delete-output-path --extract-licenses --subresource-integrity --stats-json --output-path=public --base-href="/ondotnet/"
     - time yarn run ng test --no-watch --code-coverage
 
