@@ -44,6 +44,7 @@ test:angularfrontend:
     - apt-get install -y nodejs
     - cd angularfrontend
     - npm --version
+    - time npm install -g yarn
     - date
     - yarn install
     - date
