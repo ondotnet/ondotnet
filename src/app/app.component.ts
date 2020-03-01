@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'ondotnet-root',
@@ -7,4 +8,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ondotnetangularfrontend';
+  constructor(private titleService:Title) {
+    this.titleService.setTitle('on dotNET');
+  }
 }
