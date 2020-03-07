@@ -38,7 +38,7 @@ namespace backendapi.Controllers
         {            
             var rng = new Random();
             var children = new List<ItemChild>();
-            int parentId = 1;
+            int parentId = rng.Next(1000,100000);
             int numberOfChildren = rng.Next(2, 200);
             for(int i = 0; i < numberOfChildren; i++) {
                 ItemChild currentChild = new ItemChild
