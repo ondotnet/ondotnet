@@ -38,8 +38,8 @@ namespace backendapi.Controllers
         {
             var rng = new Random();
             var children = new List<ItemChild>();
-            int numberOfItems = rng.Next(10000, 100000);
-            int numberOfChildren = rng.Next(1000000, 100000000);
+            int numberOfItems = rng.Next(2, Titles.Length);
+            int numberOfChildren = rng.Next(2, ChildTitles.Length);
             return Enumerable.Range(1, numberOfItems).Select((x, index) => new Item
             {
                 Id = index + 1,
