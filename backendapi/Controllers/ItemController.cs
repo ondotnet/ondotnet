@@ -35,25 +35,22 @@ namespace backendapi.Controllers
 
         [HttpGet]
         public IEnumerable<backendapi.Item> Get()
-        {            
+        {
             var rng = new Random();
             var children = new List<ItemChild>();
-            int parentId = rng.Next(1000,100000);
-            int numberOfChildren = rng.Next(2, 200);
-            for(int i = 0; i < numberOfChildren; i++) {
-                ItemChild currentChild = new ItemChild
-                {
-                    Id = rng.Next(1, 1000000000),
-                    ParentId = parentId,
-                    Title = ChildTitles[rng.Next(ChildTitles.Length)]
-                };
-                children.Add(currentChild);
-            }
-            return Enumerable.Range(1, 5).Select(index => new Item
+            int numberOfItems = rng.Next(10000, 100000);
+            int numberOfChildren = rng.Next(1000000, 100000000);
+            return Enumerable.Range(1, numberOfItems).Select((x, index) => new Item
             {
-                Id = parentId,
+                Id = index + 1,
                 Title = Titles[rng.Next(Titles.Length)],
-                Children = children
+                Children = Enumerable.Range(2, numberOfChildren)
+                    .Select(childIndex => new ItemChild
+                    {
+                        Id = index * numberOfChildren + childIndex,
+                        ParentId = index + 1,
+                        Title = ChildTitles[rng.Next(ChildTitles.Length)]
+                    }).ToList()
             })
             .ToArray();
         }
