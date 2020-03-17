@@ -44,3 +44,9 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+
+# yarn 2
+.yarn/cache/
+.yarn/unplugged/
+build-state.yml
+install-state.gz
