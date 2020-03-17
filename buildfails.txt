@@ -1,0 +1,3 @@
+Usage Error: The project in /home/kushal/src/ondotnetangularfrontend/package.json doesn't seem to have been installed - running an install there might help
+
+$ yarn run [--inspect] [--inspect-brk] <scriptName> ...
